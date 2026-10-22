@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python | Gabriel Marteloti</title>
+<meta name="description" content="Portfólio de projetos de análise de dados de Gabriel Marteloti: Power BI, Python, Power Query, Power Automate e SQL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <header class="rail">
+    <div><a class="name" href="index.html">Gabriel Marteloti</a><p>Estudante de ADS. Dados, BI e automação.</p></div>
+    <nav aria-label="Navegação">
+      <a href="index.html">Início</a>
+      <a href="powerbi.html">Power BI</a>
+      <a href="python.html" aria-current="page">Python</a>
+      <a href="powerquery.html">Power Query e Excel</a>
+      <a href="powerautomate.html">Power Automate</a>
+      <a href="sql.html">SQL</a>
+    </nav>
+    <div class="links"><a href="https://github.com/GabrielMarteloti">GitHub</a><a href="https://www.linkedin.com/in/gabriel-marteloti-815750329">LinkedIn</a><a href="mailto:gabrielcesarmarteloti@gmail.com">E-mail</a></div>
+  </header>
+  <main>
+    <header>
+      <h1>Python</h1>
+      <p class="intro">Scripts para limpar e manipular dados, gerar relatórios e automatizar tarefas repetitivas.</p>
+    </header>
+    <article class="project" id="projeto-1">
+      <header>
+        <h2>Consumo de bebidas por cliente: comparação entre duas lojas</h2>
+        <div class="tags"><span>Python</span><span>pandas</span><span>matplotlib</span><span>seaborn</span><span>plotly</span><span>Jupyter</span></div>
+      </header>
+      <p class="origin">Projeto prático feito a partir do vídeo <a href="https://www.youtube.com/watch?v=RFJopzRpCJY">Projeto Prático de Análise de Dados com Python e Pandas</a>, do canal Eficiência Programada. O autor do vídeo alterou alguns valores da base, então os dados <strong>não representam vendas reais</strong> e os resultados servem como exercício. As lojas foram renomeadas para Loja A e Loja B.</p>
+
+      <section class="block">
+        <h3>README</h3>
+        <div class="readme">
+          <h4>Objetivo</h4><p>Comparar o consumo de bebidas de duas lojas de um restaurante com uma métrica que corrige a diferença de público: bebidas vendidas por cliente atendido. A Loja B atende cerca de 2x o público da Loja A, então comparar o volume absoluto seria injusto.</p>
+          <h4>Principais resultados</h4>
+          <table class="minitable"><tr><th></th><th>Loja A</th><th>Loja B</th></tr><tr><td>Clientes por dia (média)</td><td>234</td><td>474</td></tr><tr><td>Drinks por cliente</td><td>1,03</td><td>0,05</td></tr><tr><td>Soft drinks por cliente</td><td>0,72</td><td>1,07</td></tr><tr><td>Drinks no mix de bebidas</td><td>58,7%</td><td>4,6%</td></tr></table>
+          <ul style="margin-top:.6rem"><li>A Loja A vende cerca de 20x mais drinks por cliente que a Loja B. Em soft drinks, a Loja B vende cerca de 1,5x mais.</li><li>A diferença aparece em todas as subcategorias com álcool: clássicos, autorais, destilados, sakes e whiskys.</li><li>O público é estável ao longo da semana, com menos de 5% de diferença entre o melhor e o pior dia, então a sazonalidade semanal não explica a diferença.</li></ul>
+          <h4>Processo</h4><ol><li>Validação: nulos, duplicatas, quantidades negativas e consistência entre data e dia da semana.</li><li>Tratamento: ordenação dos dias da semana e soma do público diário por loja.</li><li>Análise: público por dia, bebidas por cliente, mix de categorias, subcategorias e top produtos.</li><li>Qualidade dos dados: investigação de uma concentração incomum de quantidades na Loja A.</li><li>Dashboard interativo em HTML, com Plotly.</li></ol>
+          <h4>Limitações</h4><ul><li>Os dados foram alterados pelo autor do vídeo e não representam vendas reais.</li><li>O consumo vem como total do período, sem data, então não dá para medir tendência.</li><li>Na Loja B há duas linhas por dia (tabela_preco 0 e 1). Assumi que o público do dia é a soma das duas, o que precisa ser confirmado.</li></ul>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3>Vídeo de demonstração</h3>
+        <div class="media"><p>Vídeo ainda não adicionado.<br>Veja no comentário do HTML como inserir.</p></div>
+        <!-- Troque o bloco acima por:
+        <div class="media"><iframe src="https://www.youtube.com/embed/ID_DO_VIDEO" title="Demonstração do projeto" allowfullscreen></iframe></div> -->
+      </section>
+
+      <section class="block">
+        <h3>Base de dados</h3>
+        <ul class="files"><li><a href="https://github.com/GabrielMarteloti/analise-consumo-bebidas/blob/main/dados/clientes.csv">clientes.csv</a><span>Clientes atendidos por dia.</span></li><li><a href="https://github.com/GabrielMarteloti/analise-consumo-bebidas/blob/main/dados/consumo_bebidas.csv">consumo_bebidas.csv</a><span>Unidades vendidas por produto.</span></li></ul>
+      </section>
+
+      <section class="block">
+        <h3>Código</h3>
+        <div class="code">
+          <div class="codebar"><span>terminal</span><button type="button">Copiar</button></div>
+          <pre><code>git clone https://github.com/GabrielMarteloti/analise-consumo-bebidas.git
+cd analise-consumo-bebidas
+pip install -r requirements.txt
+jupyter notebook analise_drinks.ipynb</code></pre>
+        </div>
+        <p class="note">O código completo está no notebook <a href="https://github.com/GabrielMarteloti/analise-consumo-bebidas/blob/main/analise_drinks.ipynb">analise_drinks.ipynb</a>, com as saídas já executadas.</p>
+      </section>
+
+      <section class="block">
+        <h3>Gráficos e resultados</h3>
+        <div class="gallery"><a href="https://github.com/GabrielMarteloti/analise-consumo-bebidas/raw/main/images/02_bebidas_por_cliente.png"><img src="https://github.com/GabrielMarteloti/analise-consumo-bebidas/raw/main/images/02_bebidas_por_cliente.png" alt="Bebidas por cliente" loading="lazy"></a><a href="https://github.com/GabrielMarteloti/analise-consumo-bebidas/raw/main/images/03_mix_categorias.png"><img src="https://github.com/GabrielMarteloti/analise-consumo-bebidas/raw/main/images/03_mix_categorias.png" alt="Mix de categorias" loading="lazy"></a><a href="https://github.com/GabrielMarteloti/analise-consumo-bebidas/raw/main/images/04_subcategorias_drinks.png"><img src="https://github.com/GabrielMarteloti/analise-consumo-bebidas/raw/main/images/04_subcategorias_drinks.png" alt="Subcategorias de drinks" loading="lazy"></a><a href="https://github.com/GabrielMarteloti/analise-consumo-bebidas/raw/main/images/05_top5_produtos.png"><img src="https://github.com/GabrielMarteloti/analise-consumo-bebidas/raw/main/images/05_top5_produtos.png" alt="Top 5 produtos" loading="lazy"></a></div>
+        <div class="actions"><a class="cta" href="https://github.com/GabrielMarteloti/analise-consumo-bebidas/blob/main/dashboard_interativo.html">Ver dashboard interativo (HTML)</a></div>
+      </section>
+
+      <p class="repo"><a class="cta" href="https://github.com/GabrielMarteloti/analise-consumo-bebidas">Ver repositório no GitHub</a></p>
+    </article>
+    <article class="project" id="projeto-2">
+      <header>
+        <h2>Hábitos dos estudantes e desempenho nas provas</h2>
+        <div class="tags"><span>Python</span><span>pandas</span><span>matplotlib</span><span>seaborn</span><span>Jupyter</span><span>Correlação</span></div>
+      </header>
+      <p class="origin">Projeto prático feito a partir do vídeo "Projeto Completo de Análise de Dados com Python e Estatística na Prática", do canal Eficiência Programada. O arquivo corresponde ao dataset <em>Student Habits vs Academic Performance</em>, do Kaggle (1.000 estudantes, 16 colunas). Os dados são <strong>sintéticos</strong>, gerados artificialmente, então os resultados servem como exercício e não descrevem estudantes reais.</p>
+
+      <section class="block">
+        <h3>README</h3>
+        <div class="readme">
+          <h4>Objetivo</h4><p>Investigar quais hábitos dos estudantes (estudo, redes sociais, sono, exercício, saúde mental e alimentação) estão mais associados à nota final.</p>
+          <h4>Principais resultados</h4>
+          <table class="minitable"><tr><th>Hábito</th><th>Correlação com a nota</th><th>Leitura</th></tr><tr><td>Horas de estudo por dia</td><td>0,83</td><td>Forte</td></tr><tr><td>Nota de saúde mental</td><td>0,32</td><td>Moderada</td></tr><tr><td>Frequência de exercícios</td><td>0,16</td><td>Fraca</td></tr><tr><td>Horas de sono</td><td>0,12</td><td>Fraca</td></tr><tr><td>Redes sociais</td><td>-0,17</td><td>Negativa fraca</td></tr></table>
+          <ul style="margin-top:.6rem"><li>Quem estuda mais de 5h por dia (155 alunos) tem média de 90,8, contra 45,6 de quem estuda menos de 2h (133 alunos).</li><li>Nas redes sociais, a nota média cai de 72,8 (0 a 2h por dia) para 65,0 (4 a 6h).</li><li>Na saúde mental, a nota média sobe de 62,4 (nota 1) para 78,0 (nota 10).</li><li>Alimentação e gênero mostram diferenças desprezíveis.</li></ul>
+          <h4>Processo</h4><ol><li>Entendimento da base: tipos de dados, dicionário de colunas e amostra.</li><li>Validação: nulos, duplicatas e alunos no teto da escala (nota 100).</li><li>Correlação: mapa de calor e ranking dos hábitos em relação à nota.</li><li>Comparações por grupo: estudo, redes sociais, exercícios, saúde mental, alimentação e gênero.</li><li>Interpretação: cada gráfico tem um texto de leitura, e o notebook termina com conclusões e limitações.</li></ol>
+          <h4>Limitações</h4><ul><li>Os dados são sintéticos: as relações refletem como foram gerados, não o mundo real.</li><li>Correlação não é causalidade, e os hábitos se influenciam entre si.</li><li>Há um teto em 100 (48 alunos) e grupos muito pequenos, como 6h ou mais em redes sociais (3 alunos).</li><li>A coluna parental_education_level tem 91 nulos (9,1%) e não foi usada.</li></ul>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3>Vídeo de demonstração</h3>
+        <div class="media"><p>Vídeo ainda não adicionado.<br>Veja no comentário do HTML como inserir.</p></div>
+        <!-- Troque o bloco acima por:
+        <div class="media"><iframe src="https://www.youtube.com/embed/ID_DO_VIDEO" title="Demonstração do projeto" allowfullscreen></iframe></div> -->
+      </section>
+
+      <section class="block">
+        <h3>Base de dados</h3>
+        <ul class="files"><li><a href="https://github.com/GabrielMarteloti/analise-habitos-estudantes/blob/main/dados/student_habits_performance.csv">student_habits_performance.csv</a><span>1.000 estudantes, 16 colunas. Fonte: Kaggle.</span></li></ul>
+      </section>
+
+      <section class="block">
+        <h3>Código</h3>
+        <div class="code">
+          <div class="codebar"><span>terminal</span><button type="button">Copiar</button></div>
+          <pre><code>git clone https://github.com/GabrielMarteloti/analise-habitos-estudantes.git
+cd analise-habitos-estudantes
+pip install -r requirements.txt
+jupyter notebook analise_habitos_estudantes.ipynb</code></pre>
+        </div>
+        <p class="note">O código completo está no notebook <a href="https://github.com/GabrielMarteloti/analise-habitos-estudantes/blob/main/analise_habitos_estudantes.ipynb">analise_habitos_estudantes.ipynb</a>, com as saídas já executadas.</p>
+      </section>
+
+      <section class="block">
+        <h3>Gráficos e resultados</h3>
+        <div class="gallery"><a href="https://github.com/GabrielMarteloti/analise-habitos-estudantes/raw/main/images/02_ranking_correlacao.png"><img src="https://github.com/GabrielMarteloti/analise-habitos-estudantes/raw/main/images/02_ranking_correlacao.png" alt="Ranking de correlação" loading="lazy"></a><a href="https://github.com/GabrielMarteloti/analise-habitos-estudantes/raw/main/images/03_estudo_vs_nota.png"><img src="https://github.com/GabrielMarteloti/analise-habitos-estudantes/raw/main/images/03_estudo_vs_nota.png" alt="Estudo vs nota" loading="lazy"></a><a href="https://github.com/GabrielMarteloti/analise-habitos-estudantes/raw/main/images/05_nota_por_redes_sociais.png"><img src="https://github.com/GabrielMarteloti/analise-habitos-estudantes/raw/main/images/05_nota_por_redes_sociais.png" alt="Nota por redes sociais" loading="lazy"></a><a href="https://github.com/GabrielMarteloti/analise-habitos-estudantes/raw/main/images/07_nota_por_saude_mental.png"><img src="https://github.com/GabrielMarteloti/analise-habitos-estudantes/raw/main/images/07_nota_por_saude_mental.png" alt="Nota por saúde mental" loading="lazy"></a><a href="https://github.com/GabrielMarteloti/analise-habitos-estudantes/raw/main/images/01_correlacao_habitos.png"><img src="https://github.com/GabrielMarteloti/analise-habitos-estudantes/raw/main/images/01_correlacao_habitos.png" alt="Mapa de correlação" loading="lazy"></a></div>
+        
+      </section>
+
+      <p class="repo"><a class="cta" href="https://github.com/GabrielMarteloti/analise-habitos-estudantes">Ver repositório no GitHub</a></p>
+    </article>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

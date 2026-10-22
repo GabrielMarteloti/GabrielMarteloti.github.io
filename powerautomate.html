@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Power Automate | Gabriel Marteloti</title>
+<meta name="description" content="Portfólio de projetos de análise de dados de Gabriel Marteloti: Power BI, Python, Power Query, Power Automate e SQL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <header class="rail">
+    <div><a class="name" href="index.html">Gabriel Marteloti</a><p>Estudante de ADS. Dados, BI e automação.</p></div>
+    <nav aria-label="Navegação">
+      <a href="index.html">Início</a>
+      <a href="powerbi.html">Power BI</a>
+      <a href="python.html">Python</a>
+      <a href="powerquery.html">Power Query e Excel</a>
+      <a href="powerautomate.html" aria-current="page">Power Automate</a>
+      <a href="sql.html">SQL</a>
+    </nav>
+    <div class="links"><a href="https://github.com/GabrielMarteloti">GitHub</a><a href="https://www.linkedin.com/in/gabriel-marteloti-815750329">LinkedIn</a><a href="mailto:gabrielcesarmarteloti@gmail.com">E-mail</a></div>
+  </header>
+  <main>
+    <header>
+      <h1>Power Automate</h1>
+      <p class="intro">Fluxos automatizados entre Excel, e-mail, SharePoint e outras ferramentas, com a descrição de cada etapa.</p>
+    </header>
+    <!-- ===== PROJETO: para adicionar outro, copie do início deste article até o fim e cole abaixo ===== -->
+    <article class="project" id="projeto-1">
+      <header>
+        <h2>Título do projeto</h2>
+        <div class="tags"><span>Power Automate</span><span>Fluxos</span><span>Integrações</span></div>
+      </header>
+
+      <section class="block">
+        <h3>README</h3>
+        <div class="readme">
+          <h4>Objetivo</h4><p>Explique qual problema o projeto resolve e para quem.</p>
+          <h4>Como funciona</h4><p>Descreva as etapas principais: de onde vêm os dados, o que foi feito com eles e qual é a saída.</p>
+          <h4>Ferramentas</h4><p>Power Automate, Fluxos, Integrações.</p>
+          <h4>Resultados</h4><p>Conte o impacto, de preferência com números: horas economizadas, erros evitados, áreas atendidas.</p>
+        </div>
+      </section>
+
+      <section class="block">
+        <h3>Vídeo de demonstração</h3>
+        <div class="media"><p>Vídeo ainda não adicionado.<br>Veja no comentário do HTML como inserir.</p></div>
+        <!-- Troque o bloco acima por:
+        <div class="media"><iframe src="https://www.youtube.com/embed/ID_DO_VIDEO" title="Demonstração do projeto" allowfullscreen></iframe></div>
+        Ou, para um arquivo próprio em videos/powerautomate/demo.mp4:
+        <div class="media"><video src="videos/powerautomate/demo.mp4" controls></video></div> -->
+      </section>
+
+      <section class="block">
+        <h3>Base de dados</h3>
+        <ul class="files">
+          <li><a href="dados/powerautomate/projeto-1/controle.xlsx" download>controle.xlsx</a><span>Base original. Descreva as colunas principais.</span></li>
+          <li><a href="dados/powerautomate/projeto-1/dicionario.csv" download>dicionario.csv</a><span>Dicionário de dados (opcional).</span></li>
+        </ul>
+      </section>
+
+      <section class="block">
+        <h3>Código</h3>
+        <div class="code">
+          <div class="codebar"><span>fluxo.txt</span><button type="button">Copiar</button></div>
+          <pre><code>Gatilho: quando uma linha for adicionada na tabela do Excel
+Condicao: Status igual a 'Pendente'
+Acao 1: enviar e-mail ao responsavel com os dados da linha
+Acao 2: atualizar a coluna Status para 'Enviado'
+Acao 3: registrar data e hora na coluna Notificado em</code></pre>
+        </div>
+        <!-- Para mais arquivos, duplique o bloco div.code acima. -->
+      </section>
+
+      <section class="block">
+        <h3>Fluxo e testes</h3>
+        <div class="media"><p>Coloque o print do fluxo completo e um print do resultado, como o e-mail recebido.</p></div>
+        <!-- Troque o bloco acima por:
+        <div class="media"><img src="imagens/powerautomate/fluxo.png" alt="Fluxo no Power Automate"></div> -->
+      </section>
+
+      <p class="repo"><a class="cta" href="https://github.com/GabrielMarteloti">Ver repositório no GitHub</a></p>
+    </article>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
